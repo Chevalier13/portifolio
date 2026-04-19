@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Engenharia de Software & Web Development</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="ambient-light"></div>
+
+    <header class="reveal">
+        <div class="badge-hero">Disponível para novos desafios</div>
+        <h1>Construindo plataformas com <span class="gradient-text">Performance & Escalabilidade</span></h1>
+        <p>Sou <strong>Seu Nome</strong>. Estudante de Engenharia de Software (5º Período) focado em Desenvolvimento Web Full-Stack. Transformo regras de negócio complexas em sistemas rápidos, seguros e eficientes.</p>
+    </header>
+
+    <div class="container">
+        <section class="reveal">
+            <h2 class="section-title">A Fundação</h2>
+            <div class="about-card glass-panel">
+                <p>Minha visão como engenheiro é fundamentada na entrega de valor real. Tenho 100% de envolvimento no ciclo de vida das aplicações que construo, desde a modelagem da interface até a lógica de servidor. Tenho facilidade em estruturar back-ends robustos e criar rotas fluidas de navegação. Acredito que um bom código é aquele que resolve o problema do usuário sem fricção, mantendo uma arquitetura limpa e de fácil manutenção.</p>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <h2 class="section-title">Stack de Operação</h2>
+            <div class="skills-grid">
+                <div class="skill-pill">PHP & Lógica de Servidor</div>
+                <div class="skill-pill">Tailwind CSS & UI Responsiva</div>
+                <div class="skill-pill">Manipulação Avançada de JSON</div>
+                <div class="skill-pill">Python (POO & Dados)</div>
+                <div class="skill-pill">Arquitetura de Front-end</div>
+                <div class="skill-pill">Gestão de Documentos (PDFs)</div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title reveal">Obras e Projetos</h2>
+            
+            <div class="project-showcase glass-panel reveal" style="border-left: 4px solid var(--accent-primary);">
+                <div class="project-header">
+                    <h3>Diário Oficial Municipal</h3>
+                    <span class="status-badge">Sistema Oficial em Produção</span>
+                </div>
+                <p class="project-description">Plataforma governamental desenvolvida do zero para garantir a transparência pública de edições e comunicados, com foco extremo em velocidade de carregamento e facilidade de uso.</p>
+                
+                <div class="tech-stack-mini">
+                    <span>PHP</span><span>JSON</span><span>Filtros de Busca</span><span>Tailwind CSS</span><span>Gestão de PDFs</span>
+                </div>
+                
+                <div class="btn-group">
+                    <a href="#" class="btn btn-glow" target="_blank">Acessar Portal Oficial</a>
+                </div>
+            </div>
+
+            <div class="other-projects">
+                
+                <div class="project-card glass-panel reveal">
+                    <h3>ToolHub</h3>
+                    <p class="project-description">Ecossistema digital centralizador para oferecer ferramentas online gratuitas. Uma aplicação focada em utilidade e navegação rápida.</p>
+                    <p class="project-details">Liderança na estruturação da interface utilizando <strong>Tailwind CSS</strong>, criação de componentes padronizados e implementação da lógica de roteamento.</p>
+                    <div class="btn-group mt-auto">
+                        <a href="#" class="btn btn-outline" target="_blank">Acessar Hub</a>
+                    </div>
+                </div>
+
+                <div class="project-card glass-panel reveal">
+                    <h3>Corpo Leve 14 Dias</h3>
+                    <p class="project-description">Landing Page de alta performance projetada para conversão e venda de infoproduto.</p>
+                    <p class="project-details">Engenharia de front-end com foco rigoroso em tempo de carregamento e fluxos de redirecionamento dinâmicos para otimização do checkout.</p>
+                    <div class="btn-group mt-auto">
+                        <a href="#" class="btn btn-outline" target="_blank">Ver Landing Page</a>
+                        <a href="https://github.com/seu-usuario/corpo-leve" class="btn btn-text" target="_blank">Ver Código &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="reveal">
+            <h2 class="section-title">Deep Dive Técnico: O Motor do Diário Oficial</h2>
+            <div class="case-study glass-panel">
+                <div class="case-grid">
+                    <div class="case-col">
+                        <h4><span class="icon">⚠️</span> O Desafio</h4>
+                        <p>Sistemas governamentais tradicionais costumam apresentar alta latência ao listar e carregar documentos PDF pesados direto do banco de dados, resultando em quedas durante picos de acesso e uma experiência frustrante para o cidadão.</p>
+                    </div>
+                    <div class="case-col">
+                        <h4><span class="icon">💡</span> A Engenharia</h4>
+                        <p>Substituí o fluxo tradicional por uma arquitetura leve. Utilizei <strong>PHP</strong> para orquestrar o upload de PDFs e gerar automaticamente um cache estruturado em um arquivo <code>publicacoes.json</code>. O front-end consome este JSON instantaneamente.</p>
+                    </div>
+                </div>
+                <div class="case-footer">
+                    <p><strong>Resultado Operacional:</strong> A indexação via JSON permitiu que a página principal (<code>index.php</code>) renderizasse o histórico de publicações e aplicasse filtros de busca em tempo real, <strong>sem sobrecarregar as requisições ao servidor</strong>. Além disso, a arquitetura de acesso foi restrita diretamente à chave do <strong>criador</strong>, blindando o sistema contra vulnerabilidades comuns de painéis administrativos genéricos.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="glass-panel footer-content">
+            <p>Projetado e desenvolvido por <strong>Seu Nome</strong>.</p>
+            <p class="footer-links">contato@exemplo.com &nbsp;&middot;&nbsp; github.com/seu-usuario</p>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+/* Variáveis do Design System Premium */
+:root {
+    --bg-dark: #050505;
+    --bg-surface: rgba(20, 20, 25, 0.4);
+    --border-glass: rgba(255, 255, 255, 0.08);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    
+    /* Cores de Ação (Cyan para Roxo - Pegada IA) */
+    --accent-primary: #38bdf8;
+    --accent-secondary: #818cf8;
+    
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset Global e Tipografia */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+/* Luz Ambiente Fixa de Fundo */
+.ambient-light {
+    position: fixed;
+    top: -20vh;
+    left: 20vw;
+    width: 60vw;
+    height: 60vh;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(129, 140, 248, 0.05) 40%, transparent 70%);
+    filter: blur(80px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Como deve ficar (sem alertas) */
+.glass-panel {
+    background: var(--bg-surface);
+    -webkit-backdrop-filter: blur(16px); /* Prefixo SEMPRE primeiro */
+    backdrop-filter: blur(16px);         /* Padrão por último */
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* --- Hero Section (Apresentação) --- */
+header {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.badge-hero {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 6px 16px;
+    border-radius: 100px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: var(--accent-primary);
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+header h1 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;       /* Prefixo Chrome/Safari */
+    background-clip: text;               /* Padrão (Isso tira o alerta) */
+    -webkit-text-fill-color: transparent;/* Prefixo Chrome/Safari */
+    color: transparent;                  /* Padrão fallback */
+}
+header p {
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 600px;
+    font-weight: 300;
+}
+
+header p strong {
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+/* --- Seções Globais --- */
+section {
+    margin-bottom: 8rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+/* --- Sobre Mim & Habilidades --- */
+.about-card {
+    padding: 3rem;
+    font-size: 1.15rem;
+    color: var(--text-muted);
+}
+
+.about-card strong {
+    color: var(--text-main);
+}
+
+.skills-grid {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.skill-pill {
+    padding: 12px 24px;
+    border-radius: 100px;
+    border: 1px solid var(--border-glass);
+    background: rgba(255, 255, 255, 0.02);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: #e2e8f0;
+    transition: var(--transition-smooth);
+}
+
+.skill-pill:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    transform: translateY(-2px);
+    background: rgba(56, 189, 248, 0.05);
+}
+
+/* --- Projetos --- */
+.project-showcase {
+    padding: 3.5rem;
+    margin-bottom: 3rem;
+    transition: var(--transition-smooth);
+}
+
+.project-showcase:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-header h3 {
+    font-size: 2rem;
+}
+
+.status-badge {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    padding: 6px 14px;
+    border-radius: 100px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.project-description {
+    font-size: 1.2rem;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+}
+
+.tech-stack-mini {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tech-stack-mini span {
+    font-size: 0.85rem;
+    font-family: monospace;
+    color: var(--accent-secondary);
+    background: rgba(129, 140, 248, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.project-details {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Grid Projetos Menores */
+.other-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-smooth);
+}
+
+.project-card:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.mt-auto {
+    margin-top: auto;
+    padding-top: 2rem;
+}
+
+/* --- Botões Premium --- */
+.btn-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 12px 28px;
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+.btn-glow {
+    background: var(--text-main);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px rgba(248, 250, 252, 0.15);
+}
+
+.btn-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(248, 250, 252, 0.3);
+}
+
+.btn-outline {
+    border: 1px solid var(--border-glass);
+    color: var(--text-main);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-text {
+    color: var(--text-muted);
+    padding: 0;
+}
+
+.btn-text:hover {
+    color: var(--accent-primary);
+}
+
+/* --- Footer --- */
+footer {
+    padding: 0 1.5rem 2rem;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    margin-top: 0.5rem;
+    font-family: monospace;
+}
+
+/* --- Animações (Micro-interações) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsividade de Refinamento */
+@media (max-width: 768px) {
+    .project-showcase { padding: 2rem; }
+    .about-card { padding: 2rem; }
+    .project-header h3 { font-size: 1.5rem; }
+}
+/* --- Deep Dive Técnico (Estudo de Caso) --- */
+.case-study {
+    padding: 3.5rem;
+    border-top: 4px solid var(--accent-secondary);
+}
+
+.case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+}
+
+.case-col h4 {
+    font-size: 1.3rem;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.case-col p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+.case-footer {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-primary);
+}
+
+.case-footer p {
+    color: var(--text-main);
+    font-size: 1.1rem;
+}
+
+.case-footer strong {
+    color: var(--accent-primary);
+}
+
+@media (max-width: 768px) {
+    .case-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .case-study {
+        padding: 2rem;
+    }
+}
